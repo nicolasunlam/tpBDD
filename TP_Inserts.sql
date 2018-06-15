@@ -206,6 +206,18 @@ insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1,
 values
 (5,'2018-06-27 15:00:00',24 ,12, 18, 19, 2, 1);
 
+/*PARTIDOS EN FISCH STADIUM*/
+insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1, cod_equipo2, gol_equipo1, gol_equipo2)
+values
+(6,'2018-06-15 15:00:00',24 ,6, 5, 6, 3, 3);
+insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1, cod_equipo2, gol_equipo1, gol_equipo2)
+values
+(7,'2018-06-18 12:00:00',24 ,6, 25, 26, 2, 0),
+(8,'2018-06-23 15:00:00',24 ,6, 21, 24, 3, 1),
+(9,'2018-06-26 11:00:00',24 ,6, 10, 11, 1, 2);
+insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1, cod_equipo2, gol_equipo1, gol_equipo2)
+values
+(10,'2018-06-30 21:00:00',25 ,6, 1, 5, 0, 4);
 
 select * from partido;
 /**/
