@@ -73,6 +73,10 @@ or (select avg(p1.gol_equipo2)>3
 UPDATE partido
 SET cod_estadio = 7
 WHERE cod_estadio = 6;
+/*PRUEBA*/
+select estadio.descripcion estadio, partido.cod_estadio, PARTIDO.FECHA_HORA
+from partido join estadio on estadio.cod_estadio=partido.cod_estadio
+where estadio.cod_estadio=7;
 
 /*LISTADO DE PRUEBA DE PARTIDO*/
 
