@@ -2,12 +2,12 @@ use tp_bdd1_2018;
 
 /* EJERCICIO A */
 
-select E.nombre, E2.nombre, ES.descripcion
+select E.nombre Participante1, E2.nombre Participante1, ES.descripcion Estadio
 from partido P join
 	 equipo E on P.cod_equipo1 = E.cod_equipo join
      equipo E2 on P.cod_equipo2 = E2.cod_equipo join
-     estadio ES on P.cod_est = ES.cod_estadio
-where P.fecha_hora = '2018-06-22';
+     estadio ES on P.cod_estadio = ES.cod_estadio
+where p.fecha_hora between '2018-06-22 00:00:00' and '2018-06-23 00:00:00';
 
 /* EJERCICIO B */
 
@@ -74,6 +74,12 @@ UPDATE partido
 SET cod_estadio = 7
 WHERE cod_estadio = 6;
 
-/**/
+/*LISTADO DE PRUEBA DE PARTIDO*/
 
-
+select p.fecha_hora Fecha_Hora_Partido , e.descripcion Estadio,
+eq1.nombre Equipo, p.gol_equipo1, eq2.nombre Equipo, p.gol_equipo2, f.descripcion Ronda 
+from partido p join
+estadio e on e.cod_estadio=p.cod_estadio join
+equipo eq1 on eq1.cod_equipo=p.cod_equipo1 join
+equipo eq2 on eq2.cod_equipo=p.cod_equipo2 join
+fase f on f.cod_fase=p.cod_fase

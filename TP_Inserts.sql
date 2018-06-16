@@ -1,61 +1,42 @@
-/* Insert tabla Persona*/
-/*Argentina*/
 USE tp_bdd1_2018;
-insert into persona(cod_persona,nombre,tipo)
-values
-(001,'Willy Caballero','Participante'),
-(002,'Sergio Romero','Participante'),
-(003,'Nahuel Guzmán','Participante'),
-(004,'Gabriel Mercado','Participante'),
-(005,'Eduardo Salvio','Participante'),
-(006,'Federico Fazio','Participante'),
-(007,'Nicolás Otamendi','Participante'),
-(008,'Marcos Acuña','Participante'),
-(009,'Nicolás Tagliafico','Participante'),
-(010,'Marcos Rojo','Participante'),
-(011,'Javier Mascherano','Participante'),
-(012,'Cristian Ansaldi','Participante'),
-(013,'Enzo Pérez','Participante'),
-(014,'Lucas Biglia','Participante'),
-(015,'Giovani Lo Celso','Participante'),
-(016,'Ángel Di María','Participante'),
-(017,'Éver Banega','Participante'),
-(018,'Maximiliano Meza','Participante'),
-(019,'Cristian Pavón','Participante'),
-(020,'Leo Messi','Participante'),
-(021,'Paulo Dybala','Participante'),
-(022,'Sergio Agüero','Participante'),
-(023,'Gonzalo Higuaín','Participante');
 
-/* */
-insert into persona(cod_persona,nombre,tipo)
-values
-(default,'Subasic','Participante'),
-(default,'Kalinic','Participante'),
-(default,'Livakovic','Participante'),
-(default,'Vedran Corluka','Participante'),
-(default,'Domagoj Vida','Participante'),
-(default,'Ivan Strinic','Participante'),
-(default,'Dejan Lovren','Participante'),
-(default,'Sime Vrsaljko','Participante'),
-(default,'Josip Pivaric','Participante'),
-(default,'Tin Jedvaj','Participante'),
-(default,'Matej Mitrovic','Participante'),
-(default,'Caleta-Car','Participante'),
-(default,'Luka Modric','Participante'),
-(default,'Mateo Kovacic','Participante'),
-(default,'Ivan Rakitic','Participante'),
-(default,'Milan Badelj','Participante'),
-(default,'Marcelo Brozovic','Participante'),
-(default,'Filip Bradaric','Participante'),
-(default,'Mario Mandzukic','Participante'),
-(default,'Ivan Perisic','Participante'),
-(default,'Nikola Kalinic','Participante'),
-(default,'Andrej Kramaric','Participante'),
-(default,'Marko Pjaca','Participante'),
-(default,'Ante Rebic','Participante');
+/* Carga de Tablas*/
+/*posicion*/
+insert into posicion (cod_pos,descripcion) values
+(001, 'Arquero'),(002,'Defensor'),(003,'Mediocampista'),(004, 'Delantero');
 
-select * from persona;
+select*from posicion;
+
+/*nacionalidad*/
+insert into nacionalidad(cod_nac,descripcion) 
+values
+(default,'Alemán'),
+(default,'Argentino'),
+(default,'Brasileño'),
+(default,'Colombiano'),
+(default,'Coreano'),
+(default,'Costarricense'),
+(default,'Croata'),
+(default,'Español'),
+(default,'Francés'),
+(default,'Holandés'),
+(default,'Inglés'),
+(default,'Islandés'),
+(default,'Japonés'),
+(default,'Noruega'),
+(default,'Polaco'),
+(default,'Portugués'),
+(default,'Ruso'),
+(default,'Senegalés'),
+(default,'Serbio'),
+(default,'Sueco'),
+(default,'Suiza'),
+(default,'Tunecino'),
+(default,'Uruguayo');
+
+select*from nacionalidad;
+
+
 /* */
 insert into fase(cod_fase, descripcion)
 values
@@ -65,8 +46,8 @@ values
 (default,'SEMIFINAL'),
 (default,'FINAL');
 
-
 select * from fase;
+
 /* */
 insert into grupo(cod_grupo, descripcion)
 values
@@ -144,6 +125,9 @@ values
 insert into estadio(cod_estadio, cod_loc, capacidad, descripcion)
 values
 (default, 8,55300 ,'Estadio de Nizhni Nóvgorod');
+insert into estadio(cod_estadio, cod_loc, capacidad, descripcion)
+values
+(default, 9,45500 ,'Volgogrado Arena');
 
 select * from estadio;
 
@@ -166,6 +150,9 @@ values
 insert into localidad (cod_loc, descripcion, cod_prov)
 values
 (default, 'Nizhni Nóvgorod',8);
+insert into localidad (cod_loc, descripcion, cod_prov)
+values
+(default, 'Volgogrado',9);
 
 select * from localidad;
 
@@ -188,6 +175,9 @@ values
 insert into provincia(cod_prov, descripcion)
 values
 (default, 'Oblast de Nizhni Nóvgorod');
+insert into provincia(cod_prov, descripcion)
+values
+(default, 'Oblast de Volgogrado');
 
 select * from provincia;
 
@@ -219,6 +209,16 @@ insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1,
 values
 (10,'2018-06-30 21:00:00',25 ,6, 1, 5, 0, 4);
 
+/*PARTIDOS DE 22/06/2018*/
+insert into partido(cod_partido, fecha_hora, cod_fase, cod_estadio, cod_equipo1, cod_equipo2, gol_equipo1, gol_equipo2)
+values
+(11,'2018-06-22 18:00:00',24 ,13, 16, 14, 1, 0),
+(12,'2018-06-22 18:00:00',24 ,11, 20, 18, 2, 1);
+
+update partido
+set fecha_hora = '2018-06-22 12:00:00'
+where cod_partido=11;
+
+
 select * from partido;
-/**/
 
