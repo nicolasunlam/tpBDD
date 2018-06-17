@@ -7,7 +7,7 @@ from partido P join
 	 equipo E on P.cod_equipo1 = E.cod_equipo join
      equipo E2 on P.cod_equipo2 = E2.cod_equipo join
      estadio ES on P.cod_estadio = ES.cod_estadio
-where p.fecha_hora between '2018-06-22 00:00:00' and '2018-06-23 00:00:00';
+where p.fecha_hora >= '2018-06-22 00:00:00' and p.fecha_hora < '2018-06-23 00:00:00';
 
 /* EJERCICIO B */
 
@@ -40,15 +40,15 @@ and eq2.nombre = 'Brasil';
 	
 /* EJERCICIO D CON DATOS NO INGRESADOS*/
 
-/*NO COMPILAR*/
+/*NO PROBAR*/
 insert into persona
 values
 (default, 'Lionel Messi', Participante);
-/*NO COMPILAR*/
+/*NO PROBAR*/
 insert into participante
 values
 (default,'date', 'date', Jugador);
-/*NO COMPILAR*/
+/*NO PROBAR*/
 insert into jugador
 values
 (default,61, 'cod_pos');
